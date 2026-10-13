@@ -13,12 +13,21 @@ print(whole_thing)
 
 with open("rainfall.txt", "r") as f:
     lines = f.readlines()
+    no_endings = [line.rstrip("\n") for line in lines]
 
 print("--- 2: a list of lines ---")
-print(lines)
+print(no_endings)
 print(f"{len(lines)} lines")
+
 
 with open("rainfall.txt", "r") as f:
     print("--- 3: one line at a time ---")
     for line in f:
         print(f"[{line}]")
+
+
+with open("rainfall.txt", "r") as f: 
+    print("--- 4: only the third line ---")
+    lines = f.readlines()
+    print(lines[2])
+
